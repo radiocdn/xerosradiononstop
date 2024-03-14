@@ -1,4 +1,4 @@
-/* Add your CSS styles here to customize the appearance of the website of XerosRadio */
+/* Add your CSS styles here to customize the appearance of the website of XerosRadioNonstop */
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@800&display=swap');
 
 * {
@@ -124,7 +124,7 @@ animation-timing-function: ease-in;
 animation-fill-mode: forwards;
 }
 
-/* XerosRadio Playlist */
+/* XerosRadioNonstop Playlist */
 .xerosradioplaylist {
 /* Set initial styles for the element */
 opacity: 0;
@@ -210,7 +210,7 @@ animation-timing-function: ease-in;
 animation-fill-mode: forwards;
 }
 
-/* XerosRadio FADE */
+/* XerosRadioNonstop FADE */
 .radioplayerxerosradio {
 /* Set initial styles for the element */
 opacity: 0;
@@ -326,7 +326,7 @@ border-style: solid;
 border-color: red transparent transparent transparent;
 }
 
-/* Radio player container XerosRadio */
+/* Radio player container XerosRadioNonstop */
 .radioPlayer {
 background-color: #008cff;
 border-radius: 10px;
@@ -338,7 +338,7 @@ flex-direction: column;
 align-items: center;
 }
 
-/* Now Playing section XerosRadio */
+/* Now Playing section XerosRadioNonstop */
 #nowPlaying {
 margin-top: 10px;
 color: #ffffff;
@@ -352,7 +352,7 @@ text-align: left;
 user-select: none; /* Standard syntax */
 }
 
-/* Album Artwork XerosRadio */
+/* Album Artwork XerosRadioNonstop */
 #albumArtwork {
 max-width: 100px;
 height: 100px;
@@ -362,7 +362,7 @@ border-radius: 10px; /* Rounded corners */
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Artist and Title Info XerosRadio */
+/* Artist and Title Info XerosRadioNonstop */
 .info-container {
 flex-grow: 1;
 }
@@ -372,7 +372,7 @@ font-size: 16px;
 color: #fff;
 }
 
-/* Player Controls XerosRadio */
+/* Player Controls XerosRadioNonstop */
 .player-controls {
 display: flex;
 justify-content: center;
@@ -380,25 +380,25 @@ align-items: center;
 margin-top: 10px;
 }
 
-/* Play/Pause Button XerosRadio */
+/* Play/Pause Button XerosRadioNonstop */
 #playPauseButton {
-font-size: 24px; /* Larger play button XeroSRadio */
+font-size: 24px; /* Larger play button XerosRadioNonstop */
 color: #fff;
 cursor: pointer;
 margin: 0 20px;
 border: none;
-border-radius: 50%; /* Rounded corners for play button XerosRadio */
+border-radius: 50%; /* Rounded corners for play button XerosRadioNonstop */
 padding: 5px;
 }
 
 /* Chromecast Button */
 #castButton {
-font-size: 24px; /* Larger play button XeroSRadio */
+font-size: 24px; /* Larger play button XerosRadioNonstop */
 color: #fff;
 cursor: pointer;
 margin: 0 20px;
 border: none;
-border-radius: 50%; /* Rounded corners for play button XerosRadio */
+border-radius: 50%; /* Rounded corners for play button XerosRadioNonstop */
 padding: 5px;
 }
 
@@ -417,7 +417,7 @@ border-radius: 0;
 display: none;
 }
 
-/* Center the buttonxerosradio */
+/* Center the buttonxerosradiononstop */
 .buttonxerosradiomain {
 display: flex;
 justify-content: center;
@@ -431,7 +431,7 @@ animation-timing-function: ease-in;
 animation-fill-mode: forwards;    
 }
 
-/* Style for the xerosradiobuttons */
+/* Style for the xerosradiononstopbuttons */
 .xerosradiobutton {
 padding: 10px 20px;
 background-color: #00a8db;
