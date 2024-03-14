@@ -1,6 +1,6 @@
 class RadioPlayer {
     constructor() {
-        // Get the XerosRadio API DOM elements.
+        // Get the XerosRadioNonstop API DOM elements.
         this.radioPlayer = document.getElementById('radioPlayer');
         // Add 'preload' attribute with value 'none' to prevent automatic audio loading.
         this.radioPlayer.setAttribute('preload', 'none');
@@ -11,10 +11,10 @@ class RadioPlayer {
         this.volumeSlider = document.getElementById('volumeSlider');
         this.castButton = document.getElementById('castButton'); // Add Cast button reference
 
-        // Create a XerosRadio API variable to track the playing state.
+        // Create a XerosRadioNonstop API variable to track the playing state.
         this.isPlaying = false;
 
-        // Add event XerosRadio API listeners.
+        // Add event XerosRadioNonstop API listeners.
         this.playPauseButton.addEventListener('click', this.togglePlay.bind(this));
         this.volumeSlider.addEventListener('input', this.adjustVolume.bind(this));
         this.castButton.addEventListener('click', this.castButtonClick.bind(this)); // Add Cast button click event listener
@@ -23,7 +23,7 @@ class RadioPlayer {
         this.volumeSlider.value = this.getVolumeFromCookie() || 0.5;
         this.radioPlayer.volume = this.volumeSlider.value;
 
-        // Update XerosRadio now playing info initially and then every 5 seconds.
+        // Update XerosRadioNonstop now playing info initially and then every 5 seconds.
         this.updateNowPlaying();
         setInterval(this.updateNowPlaying.bind(this), 5000); // Update every 5 seconds.
 
@@ -90,7 +90,7 @@ class RadioPlayer {
             return;
         }
 
-        const mediaInfo = new chrome.cast.media.MediaInfo('https://stream.streamxerosradio.duckdns.org/xerosradio', 'audio/mp3');
+        const mediaInfo = new chrome.cast.media.MediaInfo('https://stream-nonstop.streamxerosradio.duckdns.org/xerosradiononstop', 'audio/mp3');
         const request = new chrome.cast.media.LoadRequest(mediaInfo);
         castSession.loadMedia(request).then(() => {
             console.log('Media loaded successfully.');
@@ -134,7 +134,7 @@ class RadioPlayer {
         }
     }
 
-    // Function to update the XerosRadio API play/pause button icon.
+    // Function to update the XerosRadioNonstop API play/pause button icon.
     updatePlayPauseButton() {
         if (this.isPlaying) {
             this.playPauseButton.className = 'fas fa-pause';
@@ -143,10 +143,10 @@ class RadioPlayer {
         }
     }
 
-    // Function to update XerosRadio API now playing info and artwork info.
+    // Function to update XerosRadioNonstop API now playing info and artwork info.
     updateNowPlaying() {
-        // Fetch now playing info from the XerosRadio API.
-        fetch('https://azuracast.streamxerosradio.duckdns.org/api/nowplaying/xerosradio')
+        // Fetch now playing info from the XerosRadioNonstop API.
+        fetch('https://azuracast.streamxerosradio.duckdns.org/api/nowplaying/xerosradiononstop')
             .then(response => response.json())
             .then(data => {
                 const artist = data['now_playing']['song']['artist'];
