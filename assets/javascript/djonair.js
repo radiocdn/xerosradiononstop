@@ -1,4 +1,4 @@
-// Function to check if a string is a valid URL | XerosRadio Api Checking
+// Function to check if a string is a valid URL | XerosRadioNonstop Api Checking
 function isValidUrl(url) {
     try {
         new URL(url);
@@ -9,15 +9,15 @@ function isValidUrl(url) {
   }
   
   function updateDJInfo() {
-    // Fetch URL for XerosRadio Api
-    const url = 'https://azuracast.streamxerosradio.duckdns.org/api/nowplaying/xerosradio';
+    // Fetch URL for XerosRadioNonstop Api
+    const url = 'https://azuracast.streamxerosradio.duckdns.org/api/nowplaying/xerosradiononstop';
   
     const djInfoElement = document.getElementById('djInfo');
     const artworkElement = document.getElementById('artwork');
   
     const fetchOptions = {
         method: 'GET',
-        mode: 'cors', // Cors for XerosRadio Api
+        mode: 'cors', // Cors for XerosRadioNonstop Api
         cache: 'no-cache',
         headers: {
             'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ function isValidUrl(url) {
     fetch(url, fetchOptions)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Het verzoek aan de XerosRadio Servers is mislukt. Probeer het later opnieuw.');
+                throw new Error('Het verzoek aan de XerosRadioNonstop Servers is mislukt. Probeer het later opnieuw.');
             }
             return response.json();
         })
@@ -40,7 +40,7 @@ function isValidUrl(url) {
   
                 const newImage = new Image();
                 newImage.src = "https://wsrv.nl/?w=200&h=200&output=webp&url=" + artworkUrl;
-                newImage.draggable = false; // Prevent image dragging | XerosRadio Api
+                newImage.draggable = false; // Prevent image dragging | XerosRadioNonstop Api
                 newImage.loading = "lazy";
                 newImage.alt = "DJ";
                 newImage.style.opacity = 1;
@@ -62,15 +62,15 @@ function isValidUrl(url) {
         .catch(error => {
             console.error('Fout:', error);
             const djInfoElement = document.getElementById('djInfo');
-            djInfoElement.textContent = 'XerosRadio is momenteel niet beschikbaar. Probeer het later opnieuw.';
+            djInfoElement.textContent = 'XerosRadioNonstop is momenteel niet beschikbaar. Probeer het later opnieuw.';
   
-            // Load the default image on error of XerosRadio Api
+            // Load the default image on error of XerosRadioNonstop Api
             const artworkElement = document.getElementById('artwork');
             artworkElement.innerHTML = `<img src="https://res.cloudinary.com/xerosradio/image/upload/w_200,h_200,f_auto,q_auto/XerosRadio_Logo_Achtergrond_Wit" alt="XerosRadio" draggable="false" loading="lazy" style="width: 200px; height: 200px;">`;
         });
   }
   
-  // Get New DJ-info immediately From XerosRadio Api and check and if avabile load every 5 seconds
+  // Get New DJ-info immediately From XerosRadioNonstop Api and check and if avabile load every 5 seconds
   setInterval(updateDJInfo, 5000);
   updateDJInfo(); // Call the function immediately
   
